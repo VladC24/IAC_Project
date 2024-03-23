@@ -89,7 +89,7 @@ resource "aws_iam_role_policy_attachment" "iacproject-AmazonEKSVPCResourceContro
   role       = aws_iam_role.iacproject.name
 }
 
-resource "aws_iam_role" "iacproject" {
+resource "aws_iam_role" "iacproject2" {
   name = "eks-node-group-iacproject"
 
   assume_role_policy = jsonencode({
