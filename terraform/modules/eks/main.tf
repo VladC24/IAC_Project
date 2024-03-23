@@ -60,7 +60,7 @@ resource "aws_security_group" "node_group_one" {
   }
 }
 
-resource "aws_iam_role" "iacproject" {
+resource "aws_iam_role" "iacproject2" {
   name = "eks-cluster-iacproject"
 
   assume_role_policy = <<POLICY
@@ -70,7 +70,7 @@ resource "aws_iam_role" "iacproject" {
     {
       "Effect": "Allow",
       "Principal": {
-        "Service": "eks.amazonaws.com"
+        "Service": ["ec2.amazonaws.com", "eks.amazonaws.com"]
       },
       "Action": "sts:AssumeRole"
     }
@@ -89,7 +89,7 @@ resource "aws_iam_role_policy_attachment" "iacproject-AmazonEKSVPCResourceContro
   role       = aws_iam_role.iacproject.name
 }
 
-resource "aws_iam_role" "iacproject2" {
+resource "aws_iam_role" "iacproject" {
   name = "eks-node-group-iacproject"
 
   assume_role_policy = jsonencode({
