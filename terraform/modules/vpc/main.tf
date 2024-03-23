@@ -15,7 +15,7 @@ resource "aws_internet_gateway" "iacproject" {
 
 data "aws_availability_zones" "available" {
 }
-resource "random_shuffle" "az_list" {
+resource "random_shuffle" "availability_zone_list" {
   input        = data.aws_availability_zones.available.names
   result_count = 2
 }
@@ -25,7 +25,7 @@ resource "aws_subnet" "public_iacproject_subnet" {
     vpc_id = aws_vpc.iacproject.id
     cidr_block = var.public_cidrs[count.index]
     map_public_ip_on_launch = var.map_public_ip_on_launch
-    availability_zone = var.availability_zones
+    availability_zone = random_shuffle.availability_zone_list.result[count.index]
     tags = {
         Name = var.tags
     }

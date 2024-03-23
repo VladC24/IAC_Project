@@ -2,7 +2,6 @@ module "vpc" {
     source                   = "./modules/vpc"
     tags                     = "iacproject"
     instance_tenancy         = "default"
-    availability_zones       = ["eu-west-2a", "eu-west-2b"]
     vpc_cidr                 = "10.0.0.0/16"
     access_ip                = "0.0.0.0/0"
     public_sn_count          = 2

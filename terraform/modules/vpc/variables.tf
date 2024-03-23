@@ -12,5 +12,3 @@ variable "map_public_ip_on_launch" {
 }
 variable "rt_route_cidr_block" {
 }
-variable "availability_zones" {
-}
