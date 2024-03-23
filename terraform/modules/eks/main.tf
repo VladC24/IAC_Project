@@ -52,6 +52,12 @@ resource "aws_security_group" "node_group_one" {
 
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    from_port       = 3306  # MySQL database port
+    to_port         = 3306
+    protocol        = "tcp"
+    security_groups = [var.database_security_group_id]
+  }
   egress {
     from_port   = 0
     to_port     = 0

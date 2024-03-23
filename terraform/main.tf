@@ -12,6 +12,7 @@ module "eks" {
     scaling_min_size          = 1
     instance_types             = ["t2.micro"]
     key_pair                  = "KeyPair"
+    database_security_group_id = module.vpc.database_security_group_id
 }
 
 module "vpc" {

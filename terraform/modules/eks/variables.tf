@@ -21,3 +21,5 @@ variable "scaling_min_size" {}
 variable "instance_types" {}
 
 variable "key_pair" {}
+
+variable "database_security_group_id" {}
