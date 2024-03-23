@@ -22,7 +22,28 @@ module "vpc" {
     access_ip                = "0.0.0.0/0"
     public_sn_count          = 2
     public_cidrs             = ["10.0.1.0/24", "10.0.2.0/24"] 
-    map_public_ip_on_launch = true 
+    private_sn_count         = 2
+    private_cidrs            = ["10.0.3.0/24", "10.0.4.0/24"]
+    map_public_ip_on_launch  = true 
     rt_route_cidr_block      = "0.0.0.0/0"
+    app_security_group_cidr  = "10.0.0.0/16"
 }
 
+module "rds" {
+    source               = "./modules/rds"
+    identifier           = "iacproject"
+    db_engine            = "mysql"
+    db_engine_version    = "8.0.36"
+    db_instance_type     = "db.t2.micro"
+    db_allocated_storage = 1
+    name                 = "iacproject_db"
+    username             = ""
+    password             = ""
+    port                 = 3306
+    skip_final_snapshot  = true
+    db_security_group_id = module.vpc.database_security_group_id
+    backup_window = "03:00-04:00"
+    maintenance_window = "Mon:04:00-Mon:05:00"
+    db_subnet_group_name = "iacproject-db-subnet-group"
+    db_subnet_ids = [module.vpc.private_subnet_a, module.vpc.private_subnet_b]
+}
