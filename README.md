@@ -12,7 +12,7 @@ An IAC solution for deploying a scalable web application stack consisting of con
 ## Project
 1. **_Web Server:_** Containerised HTTP Server (Node.js)
 2. **_Database Server:_** Containerised MySQL 
-3. **_Application Server:_** Containerised lightweight Python application
+3. **_Application Server:_** Containerised lightweight Node.js application
 
 ## Requirements:
 - Use Git for version control
