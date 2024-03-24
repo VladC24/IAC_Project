@@ -40,22 +40,22 @@ An IAC solution for deploying a scalable web application stack consisting of con
 
 Currently, I have only managed to create the following:
 1. AWS infrastructure (architecture diagram in /images folder)
-    A. VPC
-        - region: eu-west-2
-        - 2 x Availability Zones
-        - 2 x public subnets
-        - 2 x private subnets
-        - 2 x NAT Gateways with Elastic IPs - one in each public subnet for the resources in the private subnet to be able to access the internet
-        - 1 x Internet Gateway
-    B. EKS
-        - 1 x EKS cluster spanning both AZs
-        - 1 x node group with 1 x EC2 instance t2.micro
-        - 2 x IAM roles - one for the node group and one for the cluster
-        - 1 x security group for the node group
-    C. RDS
-        - 1 x instance db.t3.micro in 2 x private_subnets
-        - 1 x security group
-        - EKS ingress rules for db traffic
+   A. VPC
+    - region: eu-west-2
+    - 2 x Availability Zones
+    - 2 x public subnets
+    - 2 x private subnets
+    - 2 x NAT Gateways with Elastic IPs - one in each public subnet for the resources in the private subnet to be able to access the internet
+    - 1 x Internet Gateway
+   B. EKS
+    - 1 x EKS cluster spanning both AZs
+    - 1 x node group with 1 x EC2 instance t2.micro
+    - 2 x IAM roles - one for the node group and one for the cluster
+    - 1 x security group for the node group
+   C. RDS
+    - 1 x instance db.t3.micro in 2 x private_subnets
+    - 1 x security group
+    - EKS ingress rules for db traffic
 
 2. Web-server
     - a simple web server created with Express
