@@ -6,11 +6,13 @@ variable "name" {
 variable "username" {
     description = "The username for the database"
     type        = string
+    sensitive = true 
 }
 
 variable "password" {
     description = "The password for the database"
     type        = string
+    sensitive = true 
 }
 
 variable "db_instance_type" {

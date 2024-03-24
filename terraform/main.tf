@@ -35,11 +35,11 @@ module "rds" {
     identifier           = "iacproject"
     db_engine            = "mysql"
     db_engine_version    = "8.0.36"
-    db_instance_type     = "db.t2.micro"
-    db_allocated_storage = 1
+    db_instance_type     = "db.t3.micro"
+    db_allocated_storage = 20
     name                 = "iacproject_db"
-    username             = ""
-    password             = ""
+    username             = "admin"
+    password             = "password1"
     port                 = 3306
     skip_final_snapshot  = true
     db_security_group_id = module.vpc.database_security_group_id

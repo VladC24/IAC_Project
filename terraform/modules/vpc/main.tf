@@ -76,8 +76,13 @@ resource "aws_route_table_association" "private" {
     route_table_id = aws_route_table.private_iacproject_route_table.id
 }
 
+resource "aws_eip" "nat_eip" {
+    vpc = true 
+}
+
 resource "aws_nat_gateway" "nat_gateway" {
     subnet_id     = aws_subnet.public_iacproject_subnet[0].id
+    allocation_id = aws_eip.nat_eip.id
     tags = {
         Name = var.tags
     }

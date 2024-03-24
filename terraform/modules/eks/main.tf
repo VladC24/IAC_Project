@@ -103,7 +103,7 @@ resource "aws_iam_role" "iacproject" {
       Action = "sts:AssumeRole"
       Effect = "Allow"
       Principal = {
-        Service = "ec2.amazonaws.com"
+        Service = ["ec2.amazonaws.com", "eks.amazonaws.com"]
       }
     }]
     Version = "2012-10-17"
