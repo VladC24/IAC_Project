@@ -66,7 +66,7 @@ An IAC solution for deploying a scalable web application stack consisting of con
 
 #### Application server
     - a simple backed service created with Node.js
-    - contains the db configuration, runs a select query when the /getData endpoint is called - *still needs a bit of work*
+    - contains the db configuration, runs a select query when the /getData endpoint is called - *still needs some work*
     - Dockerfile
 
 ## FUTURE WORK:
