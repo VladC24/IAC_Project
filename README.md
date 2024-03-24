@@ -38,7 +38,7 @@ An IAC solution for deploying a scalable web application stack consisting of con
 
 ## WHAT I HAVE DONE SO FAR:
 #### Architecture diagram
-![IAC_project_diagram](images/IAC_project_diagram)
+![IAC_project_diagram](images/IAC_project_diagram.png)
 
 #### Currently, I have only managed to create the following:
 #### AWS infrastructure (architecture diagram in /images folder)
