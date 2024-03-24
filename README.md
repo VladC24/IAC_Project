@@ -37,6 +37,8 @@ An IAC solution for deploying a scalable web application stack consisting of con
 - Implement blue-green or canary deployment strategies for rolling out updates.
 
 ## WHAT I HAVE DONE SO FAR:
+#### Architecture diagram
+![IAC_project_diagram](images/IAC_project_diagram)
 
 #### Currently, I have only managed to create the following:
 #### AWS infrastructure (architecture diagram in /images folder)
@@ -68,7 +70,6 @@ An IAC solution for deploying a scalable web application stack consisting of con
     - Dockerfile
 
 ## FUTURE WORK:
-    If I had 2-3 more days, I would have been able to:
     - Create an S3 bucket to save the tfstate files every time I make an upgrade or change something in terraform. 
     - Create ECR for pushing the Docker images from the web and application servers
     - Containerise the two services and deploy them to EKS using Kubernetes
