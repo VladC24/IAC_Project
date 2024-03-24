@@ -4,7 +4,7 @@ const app = express();
 const port = 9000;
 
 const dbConfig = {
-    host: 'mysql-db.cfosy3hm6yzg.eu-west-2.rds.amazonaws.com',
+    host: '<mysql-db-endpoint>',
     user: '<username>',
     password: '<password>',
     database: 'mysql-db',

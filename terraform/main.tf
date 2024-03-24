@@ -1,6 +1,6 @@
 module "eks" {
     source                    = "./modules/eks"
-    aws_public_subnet         = module.vpc.aws_public_subnet
+    aws_private_subnet         = module.vpc.aws_private_subnet
     vpc_id                    = module.vpc.vpc_id
     cluster_name              = "module-eks-${random_string.suffix.result}"
     endpoint_public_access    = true

@@ -1,4 +1,4 @@
-variable "aws_public_subnet" {}
+variable "aws_private_subnet" {}
 
 variable "vpc_id" {}
 
